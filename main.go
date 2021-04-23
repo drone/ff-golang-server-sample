@@ -6,8 +6,9 @@ import (
 	"log"
 	"time"
 
-	harness "github.com/wings-software/ff-client-sdk-go/pkg/client"
-	"github.com/wings-software/ff-client-sdk-go/pkg/dto"
+
+        harness "github.com/drone/ff-golang-server-sdk/client"
+        "github.com/drone/ff-golang-server-sdk/dto"
 )
 
 const sdkKey = "7bc7df92-16bc-4c62-9ad4-b78a497690e7"
