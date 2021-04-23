@@ -1,5 +1,5 @@
-module sample
+module github.com/drone/ff-golang-server-sample
 
-go 1.14
+go 1.15
 
-require github.com/wings-software/ff-client-sdk-go v0.0.0-20210218230526-52d7540890d6 // indirect
+require github.com/drone/ff-golang-server-sdk v0.0.4
