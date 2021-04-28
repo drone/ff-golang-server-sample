@@ -6,9 +6,8 @@ import (
 	"log"
 	"time"
 
-
-        harness "github.com/drone/ff-golang-server-sdk/client"
-        "github.com/drone/ff-golang-server-sdk/dto"
+	 harness "github.com/drone/ff-golang-server-sdk/client"
+	"github.com/drone/ff-golang-server-sdk/dto"
 )
 
 const sdkKey = "7bc7df92-16bc-4c62-9ad4-b78a497690e7"
@@ -18,8 +17,7 @@ const featureFlagKey = "toggle"
 func main() {
 
 	client, err := harness.NewCfClient(sdkKey,
-		harness.WithUrl("http://34.82.119.242/api/1.0/"),
-		harness.WithEventSourceUrl("http://34.82.119.242/api/1.0/stream/environments/%s"),
+		harness.WithURL("http://34.82.119.242/api/1.0/"),
 		harness.WithStreamEnabled(true),
 	)
 	defer func() {
@@ -48,7 +46,7 @@ func main() {
 			case <-ctx.Done():
 				return
 			default:
-				showFeature, err := client.BoolVariation(featureFlagKey, target, false)
+				showFeature, err := client.BoolVariation(featureFlagKey, &target, false)
 
 				if err != nil {
 					fmt.Printf("Error getting value: %v", err)
