@@ -3,22 +3,30 @@ package main
 import (
 	"context"
 	"fmt"
+	harness "github.com/drone/ff-golang-server-sdk/client"
+	"github.com/drone/ff-golang-server-sdk/dto"
 	"log"
 	"time"
-
-	 harness "github.com/drone/ff-golang-server-sdk/client"
-	"github.com/drone/ff-golang-server-sdk/dto"
 )
 
-const sdkKey = "7bc7df92-16bc-4c62-9ad4-b78a497690e7"
+const sdkKey = "78e171de-fd0f-433b-862a-2fe5db69318e"
 
-const featureFlagKey = "toggle"
+const featureFlagKey = "Dark_Mode"
 
 func main() {
+	target := dto.NewTargetBuilder("john").
+		Firstname("John").
+		Lastname("Doe").
+		Email("john@doe.com").
+		Country("USA").
+		Custom("height", 186).
+		Name("john").
+		Build()
 
 	client, err := harness.NewCfClient(sdkKey,
 		harness.WithURL("http://34.82.119.242/api/1.0/"),
 		harness.WithStreamEnabled(true),
+		harness.WithTarget(target),
 	)
 	defer func() {
 		if err := client.Close(); err != nil {
@@ -29,14 +37,6 @@ func main() {
 	if err != nil {
 		log.Printf("could not connect to CF servers %v", err)
 	}
-
-	target := dto.NewTargetBuilder("john").
-		Firstname("John").
-		Lastname("Doe").
-		Email("john@doe.com").
-		Country("USA").
-		Custom("height", 186).
-		Build()
 
 	ctx, cancel := context.WithCancel(context.Background())
 
