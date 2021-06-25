@@ -3,8 +3,8 @@ module github.com/drone/ff-golang-server-sample
 go 1.15
 
 require (
-	github.com/deepmap/oapi-codegen v1.4.2 // indirect
-	github.com/drone/ff-golang-server-sdk v0.0.6
+	github.com/drone/ff-golang-server-sdk v0.0.12
+	github.com/go-chi/chi v4.0.2+incompatible // indirect
 	github.com/hashicorp/go-cleanhttp v0.5.2 // indirect
 	github.com/hashicorp/go-retryablehttp v0.7.0 // indirect
 	github.com/json-iterator/go v1.1.11 // indirect
