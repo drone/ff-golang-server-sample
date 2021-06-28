@@ -9,9 +9,9 @@ import (
 	"time"
 )
 
-const sdkKey = "78e171de-fd0f-433b-862a-2fe5db69318e"
+const sdkKey = "6f09aba4-d4eb-4d15-bb9d-843a8af4f220"
 
-const featureFlagKey = "Dark_Mode"
+const featureFlagKey = "SimpleBoolean"
 
 func main() {
 	target := dto.NewTargetBuilder("john").
@@ -24,7 +24,6 @@ func main() {
 		Build()
 
 	client, err := harness.NewCfClient(sdkKey,
-		harness.WithURL("http://34.82.119.242/api/1.0/"),
 		harness.WithStreamEnabled(true),
 		harness.WithTarget(target),
 	)
