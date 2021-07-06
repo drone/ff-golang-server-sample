@@ -15,12 +15,8 @@ const featureFlagKey = "SimpleBoolean"
 
 func main() {
 	target := dto.NewTargetBuilder("john").
-		Firstname("John").
-		Lastname("Doe").
-		Email("john@doe.com").
-		Country("USA").
-		Custom("height", 186).
-		Name("john").
+		Name("John").
+		Custom("customAttribute", 123).
 		Build()
 
 	client, err := harness.NewCfClient(sdkKey,
