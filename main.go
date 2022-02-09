@@ -3,8 +3,8 @@ package main
 import (
 	"context"
 	"fmt"
-	harness "github.com/drone/ff-golang-server-sdk/client"
-	"github.com/drone/ff-golang-server-sdk/dto"
+	harness "github.com/harness/ff-golang-server-sdk/client"
+	"github.com/harness/ff-golang-server-sdk/dto"
 	"log"
 	"time"
 )
