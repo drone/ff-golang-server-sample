@@ -3,7 +3,7 @@ module github.com/drone/ff-golang-server-sample
 go 1.15
 
 require (
-	github.com/drone/ff-golang-server-sdk v0.0.13
+	github.com/harness/ff-golang-server-sdk v0.0.24
 	github.com/hashicorp/go-cleanhttp v0.5.2 // indirect
 	github.com/hashicorp/go-retryablehttp v0.7.0 // indirect
 	github.com/json-iterator/go v1.1.11 // indirect
